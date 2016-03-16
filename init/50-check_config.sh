@@ -7,6 +7,4 @@ if [ ! -f /app/ubooquity/preferences.xml ]; then
   echo "Changeing some defaults to match our container"
   chown abc:abc /app/ubooquity/preferences.xml
   chmod u+rw /app/ubooquity/preferences.xml
-  chown -R abc:abc /ebooks
-  chown -R abc:abc /comics
 fi
