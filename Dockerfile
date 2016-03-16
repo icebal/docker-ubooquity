@@ -20,5 +20,5 @@ COPY services/ /etc/service/
 COPY defaults/ /defaults
 RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
  
-VOLUME ["/downloads", "/ebooks", "/comics"]
+VOLUME ["/downloads"]
 EXPOSE 2202
