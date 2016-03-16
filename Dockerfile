@@ -9,18 +9,16 @@ apt-get update && \
 apt-get install -qy $APTLIST && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 #make Ubooquity dir and get latest release
-RUN mkdir /app/ubooquity && \
-cd /app/ubooquity && \
+RUN mkdir /config/ubooquity && \
+cd /config/ubooquity && \
 wget "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip &&\
 unzip ubooquity*.zip &&\
 rm ubooquity*.zip
-#Make font folder to keep Ubooquity from breaking
-RUN mkdir -p /etc/service/ubooquity/fonts/
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 ADD defaults/ /defaults
 RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
  
-VOLUME ["/downloads", "/ebooks", "/comics"]
+VOLUME ["/config"]
 EXPOSE 2202

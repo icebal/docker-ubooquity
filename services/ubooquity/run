@@ -1,4 +1,4 @@
 #!/bin/bash
-exec /sbin/setuser abc java -jar /app/ubooquity/Ubooquity.jar --webadmin --headless --host 0.0.0.0 --port 2202 --workdir /app/ubooquity
+exec /sbin/setuser abc java -jar /config/ubooquity/Ubooquity.jar --webadmin --headless --host 0.0.0.0 --port 2202 --workdir /config/ubooquity
 sleep 2s
-exec /sbin/setuser abc tail -F /app/ubooquity/log/ubooquity.log
+exec /sbin/setuser abc tail -F /config/ubooquity/log/ubooquity.log
