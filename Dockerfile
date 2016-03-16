@@ -20,9 +20,7 @@ COPY services/ /etc/service/
 COPY defaults/ /defaults
 RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
  
-<<<<<<< HEAD
 VOLUME ["/config"]
 =======
 VOLUME ["/downloads"]
->>>>>>> f9f87780764c6ea350bc887ba11e7614405d3d82
 EXPOSE 2202
