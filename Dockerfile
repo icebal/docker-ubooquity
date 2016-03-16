@@ -14,8 +14,6 @@ cd /app/ubooquity && \
 wget "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip &&\
 unzip ubooquity*.zip &&\
 rm ubooquity*.zip
-#Make font folder to keep Ubooquity from breaking
-RUN mkdir -p /etc/service/ubooquity/fonts/
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
