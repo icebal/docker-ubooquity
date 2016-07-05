@@ -7,12 +7,11 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 RUN add-apt-repository ppa:webupd8team/java && \
 apt-get update && \
 apt-get install -qy $APTLIST && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
-#make Ubooquity dir and get latest release
-RUN mkdir /config/ubooquity && \
+apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* &&  \
+mkdir /config/ubooquity && \
 cd /config/ubooquity && \
-wget "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip &&\
-unzip ubooquity*.zip &&\
+wget "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip && \
+unzip ubooquity*.zip && \
 rm ubooquity*.zip
 #Adding Custom files
 COPY init/ /etc/my_init.d/
