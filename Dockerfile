@@ -10,7 +10,7 @@ apt-get install -qy $APTLIST && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* &&  \
 mkdir /config/ubooquity && \
 cd /config/ubooquity && \
-wget "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip && \
+wget --trust-server-names "http://vaemendis.net/ubooquity/service/download.php" -O ubooquity.zip && \
 unzip ubooquity*.zip && \
 rm ubooquity*.zip
 #Adding Custom files
