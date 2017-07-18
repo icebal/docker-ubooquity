@@ -1,2 +1,3 @@
 #!/bin/bash
-exec /sbin/setuser abc java -jar /config/ubooquity/Ubooquity.jar --webadmin --headless --host 0.0.0.0 --port 2202 --workdir /config/ubooquity
+JAVAMEM=${MAXMEM:-512}
+exec /sbin/setuser abc java -Xmx"$JAVAMEM"m -jar /config/ubooquity/Ubooquity.jar --remoteadmin --headless --host 0.0.0.0 --port 2202 --workdir /config/ubooquity
